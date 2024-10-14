@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheldon Redford's Retro Blog</title>
+    <style>
+        /* Vibrant retro background gradient */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(45deg, #ff6699, #66ccff, #ffcc33, #33ff99);
+            background-size: 400% 400%;
+            animation: colorShift 8s ease infinite;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes colorShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background-color: #ff3366;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 3em;
+            text-shadow: 3px 3px #222;
+            border-bottom: 6px solid #ffcc33;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 0 20px #33ff99;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px #000;
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff3366, #66ff99, #33ccff);
+            color: white;
+            border: 2px solid #ffcc33;
+            padding: 12px 24px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            margin: 15px 0;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: all 0.3s ease-in-out;
+            text-transform: uppercase;
+            font-weight: bold;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        button:hover {
+            background-color: #ffcc33;
+            color: #333;
+            border: 2px solid #33ccff;
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Hide content and post by default */
+        #post-page {
+            display: none;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        /* Retro fonts and colors for full posts */
+        .content p {
+            color: #f2f2f2;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        /* Return button */
+        .back-btn {
+            background-color: #ff6699;
+            color: white;
+            border: 2px solid #ffcc33;
+            padding: 10px 20px;
+            margin: 20px 0;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 10px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-btn:hover {
+            background-color: #ffcc33;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    Sheldon Redford's Blog
+</header>
+
+<div class="container" id="main-page">
+    <!-- Main Blog Post Previews -->
+    <div class="post">
+        <h2>Who am I?</h2>
+        <button onclick="showPost(0)">Read More</button>
+    </div>
+
+    <div class="post">
+        <h2>Who Are We?</h2>
+        <button onclick="showPost(1)">Read More</button>
+    </div>
+
+    <div class="post">
+        <h2>How Will AI Impact Science in the Next 50 Years?</h2>
+        <button onclick="showPost(2)">Read More</button>
+    </div>
+
+    <div class="post">
+        <h2>How Do Phones and Social Media Affect Childhood?</h2>
+        <button onclick="showPost(3)">Read More</button>
+    </div>
+</div>
+
+<!-- Post Page for Displaying Full Post -->
+<div class="container" id="post-page">
+    <h2 id="post-title"></h2>
+    <div class="content" id="post-content"></div>
+    <button class="back-btn" onclick="goBack()">Back to Posts</button>
+</div>
+
+<script>
+    const posts = [
+        {
+            title: "Who am I?",
+            content: `
+                <p>My name is Sheldon Redford, I am a 16 year old highschool student, and this is my first post. I really wanted this post to be a reflection of my way of thinking while answering a question that has an opinion-based answer.</p>
+                <p>Is it harder to grow up in the 21st century than it was in the past?</p>
+                <p>I believe that growing up now is much harder in the 21st century as opposed to previous centuries. As now there are many more issues and problems to face. Such as bullying, you can now bully people completely anonymously and nobody will ever know it’s you, along with this it’s more socially acceptable(Borderline desirable) to be a bully or partake...</p>
+                <p>Another huge topic to discuss is the price of living and how much this increase affects your plans and behavior. With the cost of basic needs such as a vehicle, gasoline, rent, food, post-secondary education, etc. This can completely alter and restrict a person's aspirations and potential...</p>
+                <p>Another thing to pair with this is also an overlaying expectation of an increase in performance compared to the last generation/previous century. Like I previously said it's more difficult to attain basic needs, however this pairs perfectly with an increased expectation of achievements and functionality, as it's harder to do so...</p>
+            `
+        },
+        {
+            title: "Who Are We?",
+            content: `
+                <p>In this post, I want to share my reflections on a recent class activity that focused on connecting with my classmates. This exercise was successfully aimed towards growing our social skills and giving ourselves a greater perspective, as it encouraged us to learn more about each other...</p>
+                <p>During our Composition class, we participated in a question-and-answer session where we asked various classmates different questions. I had the chance to connect with 22 people, and it was a rewarding experience...</p>
+                <p>Through these conversations, I learned about a variety of interests and backgrounds. For instance, Beatrice is an exchange student from Italy who speaks multiple languages. Kaitlyn enjoys baking depending on her mood, while Ivan, also here on exchange from Germany, plays an instrument...</p>
+                <p>Ashley has traveled to the U.S., and Amelia is an avid reader. Kai is an artist who shares his music on SoundCloud, Roby is dedicated to the volleyball team, and Jack has the unique hobby of swimming in the ocean during winter...</p>
+                <p>Overall, this activity displayed the diversity in our classroom and helped us to connect with one another allowing further connection to be achieved if desired. It’s important to appreciate our differences while also finding common ground, and actively practice doing so as social media’s effects on our generation's social skills are tremendous.</p>
+            `
+        },
+        {
+            title: "How Will AI Impact Science in the Next 50 Years?",
+            content: `
+                <p>In this post, I want to tackle the thought on how Artificial Intelligence (AI) will change the future of science. To answer this question, it’s important to first understand what science and AI really are...</p>
+                <p>Science is the systematic study of the natural and physical world, built on observations, predictions, experiments, and testing. It’s split into two broad categories: natural science (like physics, biology, and chemistry) and behavioral science (like psychology, sociology, and economics)...</p>
+                <p>Now let’s look at AI. Right now, AI is most effective in areas like language processing—where it can predict outcomes or analyze complex variables based on existing data. However, when it comes to more advanced scientific problems, AI has its limits...</p>
+                <p>Will AI ever be able to think "outside the box"? As of now, it’s great at processing vast amounts of information but can’t generate truly original ideas, the way it works is purely off input...</p>
+                <p>As throughout most of history, great scientific discoveries tend to come from looking at something differently and having a different interpretation of data than everybody else. If AI ever gains the ability to think creatively, it could potentially solve some of the biggest scientific challenges, like finding a cure for diseases or solving environmental issues...</p>
+            `
+        },
+        {
+            title: "How Do Phones and Social Media Affect Childhood?",
+            content: `
+                <p>This topic is one I feel strongly about because of how much technology is embedded into our lives today, but there’s also many benefits from social media and phones...</p>
+                <p>As kids grow up, they are consistently exposed to social media from a very young age. This can lead to a plethora of issues. Children are often pressured to maintain an online image and build up an audience which can lead to anxiety and depression...</p>
+                <p>On the other hand, social media can allow kids to interact and maintain connections with friends and family no matter where they are, along with a platform to share their hobbies and interests...</p>
+                <p>It's all about balance! While technology can have some negative effects on childhood, it can also provide invaluable learning opportunities and foster connections...</p>
+                <p>Ultimately, it’s important to teach kids how to use technology mindfully, ensuring they develop a healthy relationship with their devices and social media.</p>
+            `
+        }
+    ];
+
+    function showPost(index) {
+        const postPage = document.getElementById('post-page');
+        const mainPage = document.getElementById('main-page');
+        const postTitle = document.getElementById('post-title');
+        const postContent = document.getElementById('post-content');
+
+        postTitle.innerHTML = posts[index].title;
+        postContent.innerHTML = posts[index].content;
+
+        mainPage.style.display = 'none';
+        postPage.style.display = 'block';
+    }
+
+    function goBack() {
+        const postPage = document.getElementById('post-page');
+        const mainPage = document.getElementById('main-page');
+
+        postPage.style.display = 'none';
+        mainPage.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
